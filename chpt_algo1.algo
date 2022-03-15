@@ -1,0 +1,35 @@
+ALGORITHM checkpoint_algo1
+VAR
+    str:string:="Bonjour la vie."
+    vow: string := "aeouiy"
+    lenght,vowels: INTEGER :=0
+    words: INTEGER :=1
+    i,j,k,l: INTEGER :=0
+BEGIN
+    // lenght counter
+    read(str)
+    REPEAT
+    read(str[i])
+    lenght:= lenght+1
+    i=i+1
+    UNTIL (str[i]=".")
+    write (lenght)
+    // words counter 
+    for j from 0 to lenght do 
+    IF (str[j]=" ") THEN
+        words=words+1
+    END_IF
+    END_FOR
+    write(words)
+    // vowels counter 
+    for k from 0 to lenght do 
+    read(str[k])
+        for l from 0 to 6 do
+        read(vow[l])
+            IF (str[k]=vow[l]) THEN
+                vowels=vowels+1
+            END_IF 
+        END_FOR
+    END_FOR
+    write(vowels)
+END
